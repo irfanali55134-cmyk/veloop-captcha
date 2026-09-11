@@ -2825,122 +2825,1372 @@ button {
   line-height: 1;
 }
 
-
 /* =========================================
-   EARN NAV DIAMOND + LABEL — FINAL ALIGNMENT
+   UI / UX POLISH — MANAGER FEEDBACK V1
+   Visual-only refinement. Existing flow preserved.
 ========================================= */
 
-.bottom-nav .nav-earn {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 2px !important;
-  min-height: 43px !important;
-  padding: 0 !important;
+/* Give the app a more intentional premium frame */
+.mobile-app {
+  padding: 20px 18px 104px;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(0, 184, 230, 0.035), transparent 28%),
+    linear-gradient(180deg, rgba(3, 15, 30, 0.94), rgba(1, 7, 17, 0.98));
 }
 
-.bottom-nav .nav-earn .ui-diamond-nav {
-  display: block !important;
-  position: relative !important;
-
-  flex: 0 0 20px !important;
-
-  width: 20px !important;
-  height: 19px !important;
-
-  margin: 0 !important;
-  transform: none !important;
+/* Header refinement */
+.app-header {
+  gap: 12px;
 }
 
-.bottom-nav .nav-earn .nav-earn-label {
-  display: block !important;
-  position: relative !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  line-height: 1 !important;
-  white-space: nowrap;
-
-  font-size: 7px !important;
-  color: #00b8e6 !important;
-}
-/* =========================================
-   WRONG / SUCCESS REWARD DIAMOND FIX
-========================================= */
-
-.result-screen .earned-reward {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  gap: 10px !important;
-
-  width: max-content !important;
-  max-width: 100%;
-
-  margin-left: auto !important;
-  margin-right: auto !important;
-
-  white-space: nowrap;
+.header-back {
+  width: 40px;
+  height: 40px;
+  border-color: rgba(149, 178, 208, 0.28);
+  background: rgba(7, 20, 36, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
-.result-screen .earned-reward .real-diamond,
-.result-screen .earned-reward .ui-diamond-earned {
-  position: relative !important;
-
-  display: block !important;
-
-  flex: 0 0 34px !important;
-
-  width: 34px !important;
-  height: 33px !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  transform: none !important;
-
-  overflow: visible !important;
+.header-back:hover {
+  transform: translateY(-1px);
 }
 
-.result-screen .earned-reward strong {
-  display: block !important;
-
-  flex: 0 0 auto !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  line-height: 1 !important;
-
-  white-space: nowrap !important;
+.brand strong {
+  font-size: 17px;
+  letter-spacing: 2.4px;
 }
 
-/* Small screen */
-@media (max-width: 430px) {
-  .result-screen .earned-reward {
-    gap: 10px !important;
+.brand span {
+  margin-top: 5px;
+  font-size: 7px;
+  letter-spacing: 2.8px;
+}
+
+.balance-pill {
+  min-height: 36px;
+  padding: 7px 11px !important;
+  border-color: rgba(116, 159, 199, 0.30) !important;
+  background: linear-gradient(135deg, rgba(8, 25, 45, 0.92), rgba(4, 15, 29, 0.92)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.045), 0 7px 18px rgba(0,0,0,0.16);
+}
+
+.balance-pill span {
+  font-size: 10px;
+  font-weight: 750;
+}
+
+/* Hero feels less flat and more like a product screen */
+.secure-badge {
+  margin-top: 25px;
+  padding: 7px 12px;
+  border-color: rgba(0, 184, 230, 0.32);
+  background: linear-gradient(135deg, rgba(24,87,161,0.22), rgba(0,184,230,0.075));
+  box-shadow: 0 5px 18px rgba(0, 184, 230, 0.055);
+}
+
+.page-title {
+  margin-top: 17px;
+  font-size: 28px;
+  letter-spacing: -0.75px;
+}
+
+.page-subtitle {
+  max-width: 245px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(225, 234, 247, 0.62);
+  font-size: 10px;
+}
+
+/* Main CAPTCHA card: stronger hierarchy, softer depth */
+.captcha-card {
+  margin-top: 18px;
+  padding: 15px;
+  border-color: rgba(73, 130, 177, 0.54);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(7, 24, 43, 0.98), rgba(3, 15, 29, 0.98));
+  box-shadow:
+    0 20px 48px rgba(0,0,0,0.40),
+    inset 0 1px 0 rgba(255,255,255,0.035),
+    inset 0 0 26px rgba(24,87,161,0.045);
+}
+
+.captcha-title h2 {
+  font-size: 14px;
+  letter-spacing: -0.1px;
+}
+
+.captcha-title p {
+  margin-top: 5px;
+  font-size: 7.5px;
+  color: rgba(203, 215, 232, 0.58);
+}
+
+/* CAPTCHA itself gets a cleaner, more usable target area */
+.captcha-box {
+  margin-top: 13px;
+  min-height: 84px;
+  border-radius: 11px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.78),
+    0 7px 18px rgba(0,0,0,0.17);
+}
+
+.captcha-box strong.captcha-code-text {
+  font-size: 26px;
+  letter-spacing: 3.2px;
+}
+
+.refresh-code {
+  min-height: 18px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 8px;
+  color: #52647e;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.refresh-code:hover {
+  background: rgba(24,87,161,0.08);
+  color: #1857a1;
+}
+
+.refresh-code:active {
+  transform: scale(0.97);
+}
+
+/* Answer buttons: clearer affordance and touch target */
+.matching-title {
+  margin-top: 13px;
+  margin-bottom: 8px;
+  font-size: 8px;
+  color: rgba(255,255,255,0.76);
+}
+
+.captcha-options {
+  gap: 8px;
+}
+
+.captcha-option {
+  min-height: 45px;
+  border-radius: 9px;
+  border-color: rgba(76, 125, 165, 0.52);
+  background: linear-gradient(135deg, rgba(8,27,47,0.98), rgba(5,20,36,0.98));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.captcha-option:hover:not(:disabled) {
+  box-shadow:
+    0 7px 18px rgba(0,184,230,0.09),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+.captcha-option:focus-visible,
+.header-back:focus-visible,
+.refresh-code:focus-visible,
+.bottom-nav button:focus-visible {
+  outline: 2px solid rgba(0,184,230,0.72);
+  outline-offset: 2px;
+}
+
+/* Security message becomes a deliberate trust element */
+.security-notice {
+  min-height: 38px;
+  margin-top: 10px;
+  padding: 8px 9px;
+  border-color: rgba(72, 116, 153, 0.42);
+  background: linear-gradient(135deg, rgba(7,25,44,0.82), rgba(5,18,33,0.72));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+/* Reward deserves stronger visual emphasis */
+.reward-card {
+  min-height: 60px;
+  gap: 11px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  border-color: rgba(255, 205, 91, 0.72);
+  background:
+    radial-gradient(circle at 12% 50%, rgba(255,215,90,0.10), transparent 25%),
+    linear-gradient(135deg, rgba(199,158,84,0.11), rgba(255,215,90,0.025));
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+.reward-gem {
+  width: 38px;
+  height: 38px;
+  box-shadow:
+    0 0 18px rgba(255,215,90,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.reward-card span {
+  font-size: 7.5px;
+  color: rgba(255,255,255,0.68);
+}
+
+.reward-card strong {
+  margin-top: 3px;
+  font-size: 15px;
+  letter-spacing: -0.15px;
+}
+
+/* Bottom navigation: clearer separation and touch area */
+.bottom-nav {
+  width: min(100%, 430px);
+  padding: 8px 10px 10px;
+  border-top-color: rgba(126, 157, 188, 0.11);
+  background:
+    linear-gradient(180deg, rgba(3,12,26,0.90), rgba(1,6,15,0.99));
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.16);
+}
+
+.bottom-nav button {
+  min-height: 45px;
+  border-radius: 10px;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.bottom-nav button:not(.v-logo):hover {
+  background: rgba(255,255,255,0.025);
+}
+
+.bottom-nav button:not(.v-logo):active {
+  transform: scale(0.96);
+}
+
+.nav-active {
+  text-shadow: 0 0 12px rgba(0,184,230,0.22);
+}
+
+/* Prevent the screen from feeling unnecessarily empty on taller phones */
+.challenge-screen {
+  padding-bottom: 8px;
+}
+
+@media (min-width: 700px) {
+  .mobile-app {
+    min-height: calc(100vh - 20px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 28px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.34);
   }
 
-  .result-screen .earned-reward .real-diamond,
-  .result-screen .earned-reward .ui-diamond-earned {
-    flex-basis: 32px !important;
-    width: 32px !important;
-    height: 31px !important;
+  .bottom-nav {
+    bottom: 10px;
+    border-radius: 0 0 28px 28px;
   }
 }
 
 @media (max-width: 370px) {
-  .result-screen .earned-reward {
+  .mobile-app {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .captcha-card {
+    padding: 13px;
+  }
+
+  .captcha-box strong.captcha-code-text {
+    font-size: 23px;
+    letter-spacing: 2.4px;
+  }
+}
+
+/* =========================================================
+   FINAL DIAMOND / CONTENT OVERLAP FIX
+   Keeps reward and Earn diamonds inside their own layout.
+   ========================================================= */
+
+/* Reward diamond must stay in normal flex flow */
+.result-screen .earned-reward,
+.earned-reward {
+  position: relative !important;
+  z-index: 4 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: max-content !important;
+  max-width: calc(100% - 24px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+.result-screen .earned-reward > svg,
+.result-screen .earned-reward .real-diamond,
+.result-screen .earned-reward .ui-diamond-earned,
+.earned-reward > svg,
+.earned-reward .real-diamond,
+.earned-reward .ui-diamond-earned {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 5 !important;
+  display: block !important;
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.result-screen .earned-reward strong,
+.earned-reward strong {
+  position: relative !important;
+  z-index: 6 !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Reward-card diamond stays beside its text instead of over it */
+.reward-card .reward-gem,
+.reward-card .real-diamond,
+.reward-card .ui-diamond {
+  position: relative !important;
+  inset: auto !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  margin: 0 !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.reward-card > div:last-child {
+  position: relative !important;
+  z-index: 3 !important;
+  min-width: 0 !important;
+}
+
+/* Earn item in bottom navigation: diamond + label are vertically separated */
+.bottom-nav .nav-active,
+.bottom-nav .nav-earn {
+  position: relative !important;
+  z-index: 6 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  min-height: 45px !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+}
+
+.bottom-nav .nav-active > svg,
+.bottom-nav .nav-active .real-diamond,
+.bottom-nav .nav-active .ui-diamond,
+.bottom-nav .nav-active .ui-diamond-nav,
+.bottom-nav .nav-earn > svg,
+.bottom-nav .nav-earn .real-diamond,
+.bottom-nav .nav-earn .ui-diamond,
+.bottom-nav .nav-earn .ui-diamond-nav {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 7 !important;
+  display: block !important;
+  flex: 0 0 22px !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.bottom-nav .nav-active > span,
+.bottom-nav .nav-earn > span,
+.bottom-nav .nav-earn-label {
+  position: relative !important;
+  z-index: 8 !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Never let a glow sit on top of the reward text */
+.result-screen .earned-reward svg,
+.bottom-nav .nav-active svg,
+.bottom-nav .nav-earn svg {
+  pointer-events: none;
+}
+
+@media (max-width: 370px) {
+  .result-screen .earned-reward,
+  .earned-reward {
     gap: 8px !important;
   }
 
+  .result-screen .earned-reward > svg,
   .result-screen .earned-reward .real-diamond,
-  .result-screen .earned-reward .ui-diamond-earned {
-    flex-basis: 29px !important;
-    width: 29px !important;
-    height: 28px !important;
+  .result-screen .earned-reward .ui-diamond-earned,
+  .earned-reward > svg,
+  .earned-reward .real-diamond,
+  .earned-reward .ui-diamond-earned {
+    flex-basis: 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
+
+  .bottom-nav .nav-active > svg,
+  .bottom-nav .nav-active .real-diamond,
+  .bottom-nav .nav-active .ui-diamond,
+  .bottom-nav .nav-active .ui-diamond-nav,
+  .bottom-nav .nav-earn > svg,
+  .bottom-nav .nav-earn .real-diamond,
+  .bottom-nav .nav-earn .ui-diamond,
+  .bottom-nav .nav-earn .ui-diamond-nav {
+    flex-basis: 21px !important;
+    width: 21px !important;
+    height: 21px !important;
+    min-width: 21px !important;
+    min-height: 21px !important;
+  }
+}
+
+
+/* =========================================================
+   MANAGER UI/UX POLISH — PASS 2
+   Scoped visual/interaction improvements.
+   Existing functionality and screen flow are unchanged.
+========================================================= */
+
+/* ---------- Global interaction quality ---------- */
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(0, 184, 230, 0.9);
+  outline-offset: 3px;
+}
+
+/* ---------- Header polish ---------- */
+
+.app-header {
+  min-height: 42px;
+}
+
+.header-back {
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    inset 0 0 12px rgba(255, 255, 255, 0.025);
+}
+
+.header-back:active {
+  transform: scale(0.94);
+}
+
+.balance-pill {
+  min-width: 78px;
+  justify-content: center;
+  border-color: rgba(0, 184, 230, 0.24);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.18),
+    inset 0 0 12px rgba(0, 184, 230, 0.035);
+}
+
+.balance-pill span {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Hero hierarchy ---------- */
+
+.challenge-screen .secure-badge {
+  box-shadow:
+    0 8px 24px rgba(0, 184, 230, 0.06),
+    inset 0 0 14px rgba(0, 184, 230, 0.035);
+}
+
+.challenge-screen .page-title {
+  margin-top: 18px;
+  letter-spacing: -0.8px;
+}
+
+.challenge-screen .page-subtitle {
+  max-width: 235px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- CAPTCHA card: clearer hierarchy ---------- */
+
+.captcha-card {
+  position: relative;
+  border-color: rgba(72, 137, 190, 0.55);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(0, 184, 230, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    inset 0 0 28px rgba(24, 87, 161, 0.045);
+}
+
+.captcha-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 184, 230, 0.42),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.captcha-title h2 {
+  letter-spacing: -0.1px;
+}
+
+.captcha-box {
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.14),
+    0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+.refresh-code {
+  min-height: 22px;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.refresh-code:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Answer choices: stronger affordance ---------- */
+
+.matching-title {
+  margin-top: 13px;
+  letter-spacing: 0.05px;
+}
+
+.captcha-option {
+  min-height: 46px;
+  border-color: rgba(74, 126, 166, 0.58);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.captcha-option span {
+  transition: transform 0.18s ease;
+}
+
+.captcha-option:hover:not(:disabled) span:first-child {
+  transform: translateY(-0.5px);
+}
+
+.captcha-option:focus-visible {
+  border-color: #00b8e6;
+  box-shadow:
+    0 0 0 2px rgba(0, 184, 230, 0.14),
+    0 0 16px rgba(0, 184, 230, 0.12);
+}
+
+.captcha-option.selected {
+  box-shadow:
+    0 8px 22px rgba(0, 184, 230, 0.14),
+    0 0 20px rgba(0, 184, 230, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.option-check {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Security notice: trust cue ---------- */
+
+.security-notice {
+  border-color: rgba(74, 126, 166, 0.44);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
+}
+
+.security-notice svg {
+  opacity: 0.9;
+}
+
+/* ---------- Reward card: make the value immediately scannable ---------- */
+
+.reward-card {
+  min-height: 58px;
+  border-color: rgba(255, 215, 90, 0.68);
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(255, 215, 90, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(199, 158, 84, 0.11),
+      rgba(255, 215, 90, 0.025)
+    );
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.reward-gem {
+  box-shadow:
+    0 0 16px rgba(255, 215, 90, 0.22),
+    0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.reward-card strong {
+  letter-spacing: -0.15px;
+}
+
+/* ---------- Selected / loading state ---------- */
+
+.verification-mini {
+  padding-left: 2px;
+}
+
+.mini-progress {
+  height: 4px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Result screen spacing safety ---------- */
+
+.result-screen .earned-reward {
+  position: relative;
+  z-index: 6;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: max-content !important;
+  max-width: calc(100% - 24px);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  white-space: nowrap;
+}
+
+.result-screen .earned-reward > svg,
+.result-screen .earned-reward .real-diamond,
+.result-screen .earned-reward .ui-diamond-earned {
+  position: relative !important;
+  inset: auto !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.result-screen .earned-reward strong {
+  position: relative;
+  z-index: 7;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ---------- Bottom navigation: clearer active state ---------- */
+
+.bottom-nav {
+  box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.bottom-nav button {
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.bottom-nav button:active:not(.v-logo) {
+  transform: translateY(1px) scale(0.96);
+}
+
+.nav-active {
+  text-shadow: 0 0 10px rgba(0, 184, 230, 0.2);
+}
+
+.nav-active span,
+.nav-earn-label {
+  font-weight: 700;
+}
+
+.v-logo {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.v-logo:active {
+  transform: scale(0.94);
+}
+
+/* ---------- Better small-screen balance ---------- */
+
+@media (max-width: 430px) {
+  .mobile-app {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .captcha-card {
+    margin-top: 15px;
+  }
+
+  .reward-card {
+    margin-top: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-app {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .captcha-option {
+    min-height: 43px;
+  }
+
+  .challenge-screen .page-title {
+    font-size: 25px;
+  }
+
+  .result-screen .earned-reward {
+    gap: 8px !important;
+  }
+}
+
+/* Respect reduced-motion preferences for a more accessible UX. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* =========================================================
+   MANAGER FEEDBACK — FINAL EARN SCREEN POLISH
+   Goal: cleaner hierarchy, tighter vertical rhythm,
+   stronger CTA affordance, premium but minimal styling.
+   No JSX/functionality changes required.
+========================================================= */
+
+/* Keep the app visually centered and give the main content
+   a little more breathing room on desktop-sized viewports. */
+.mobile-app {
+  overflow-x: hidden;
+}
+
+/* Header: slightly stronger separation from the content. */
+.app-header {
+  border-bottom-color: rgba(86, 132, 166, 0.16);
+}
+
+.app-header .header-title,
+.app-header h1,
+.app-header h2 {
+  letter-spacing: 0.08em;
+}
+
+/* Earn hero */
+.challenge-screen {
+  padding-top: 4px;
+}
+
+.challenge-screen .secure-badge {
+  margin-bottom: 2px;
+}
+
+.challenge-screen .page-title {
+  font-size: clamp(25px, 6vw, 29px);
+  line-height: 1.08;
+  margin-bottom: 7px;
+}
+
+.challenge-screen .page-subtitle {
+  font-size: 10px;
+  line-height: 1.45;
+  opacity: 0.72;
+}
+
+/* CAPTCHA card */
+.captcha-card {
+  margin-top: 16px;
+  padding: 15px 14px 14px;
+  border-radius: 15px;
+}
+
+.captcha-title {
+  margin-bottom: 10px;
+}
+
+.captcha-title h2 {
+  font-size: 15px;
+  line-height: 1.15;
+}
+
+.captcha-title p {
+  font-size: 8px;
+  line-height: 1.35;
+  opacity: 0.68;
+}
+
+/* CAPTCHA itself should remain the visual focal point. */
+.captcha-box {
+  border-radius: 10px;
+  min-height: 79px;
+}
+
+.captcha-box .captcha-text {
+  letter-spacing: 3px;
+}
+
+/* Refresh action gets a clearer but still subtle hit area. */
+.refresh-code {
+  min-height: 25px;
+  padding: 4px 7px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.refresh-code:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.matching-title {
+  margin: 11px 0 7px;
+  font-size: 8px;
+  opacity: 0.76;
+}
+
+/* Options: easier to scan and more obviously clickable. */
+.captcha-options {
+  gap: 8px;
+}
+
+.captcha-option {
+  min-height: 44px;
+  border-radius: 9px;
+  font-size: 10px;
+  letter-spacing: 0.15px;
+  cursor: pointer;
+}
+
+.captcha-option:not(:disabled):hover {
+  border-color: rgba(0, 184, 230, 0.72);
+  background: rgba(0, 184, 230, 0.045);
+  transform: translateY(-1px);
+}
+
+.captcha-option:not(:disabled):active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Security notice */
+.security-notice {
+  margin-top: 10px;
+  min-height: 35px;
+  padding: 7px 9px;
+  border-radius: 8px;
+}
+
+.security-notice span {
+  line-height: 1.35;
+}
+
+/* Reward card: visually connected to the task above. */
+.reward-card {
+  margin-top: 10px;
+  min-height: 56px;
+  padding: 8px 12px;
+  border-radius: 13px;
+}
+
+.reward-card > div:first-child {
+  flex-shrink: 0;
+}
+
+.reward-card .reward-gem,
+.reward-card .real-diamond,
+.reward-card .ui-diamond {
+  filter: drop-shadow(0 0 7px rgba(255, 215, 90, 0.16));
+}
+
+.reward-card small {
+  font-size: 8px;
+  line-height: 1.2;
+  opacity: 0.72;
+}
+
+.reward-card strong {
+  font-size: 15px;
+  line-height: 1.05;
+}
+
+/* Give the lower half of the screen a subtle visual anchor
+   without adding another component or changing the layout. */
+.challenge-screen::after {
+  content: "";
+  display: block;
+  width: min(210px, 55%);
+  height: 1px;
+  margin: 28px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 184, 230, 0.10),
+    transparent
+  );
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  min-height: 70px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+.bottom-nav button {
+  min-width: 52px;
+}
+
+.bottom-nav button span,
+.bottom-nav .nav-earn-label {
+  font-size: 7px;
+  line-height: 1.1;
+  letter-spacing: 0.1px;
+}
+
+.bottom-nav .nav-active,
+.bottom-nav .nav-earn {
+  gap: 4px !important;
+}
+
+/* Keep the central V button visually dominant, not oversized. */
+.bottom-nav .v-logo {
+  transform-origin: center;
+}
+
+.bottom-nav .v-logo:hover {
+  transform: translateY(-1px);
+}
+
+.bottom-nav .v-logo:active {
+  transform: scale(0.94);
+}
+
+/* Desktop/tablet: don't let the mobile card become too wide. */
+@media (min-width: 600px) {
+  .challenge-screen {
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .captcha-card {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .challenge-screen .page-title {
+    font-size: 24px;
+  }
+
+  .captcha-card {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .captcha-option {
+    min-height: 42px;
+  }
+
+  .reward-card strong {
+    font-size: 14px;
+  }
+
+  .bottom-nav {
+    min-height: 66px;
+  }
+}
+
+
+/* =========================================================
+   MANAGER UX — VERIFICATION + CHECKING POLISH
+   Step 1: no JSX or timing changes.
+   Existing screen flow is preserved.
+========================================================= */
+
+/* ---------- Shared state-screen layout ---------- */
+
+.state-screen,
+.checking-screen {
+  position: relative;
+  min-height: 680px;
+  padding: 34px 8px 96px;
+  overflow: hidden;
+  text-align: center;
+  animation: statePolishIn 0.4s ease both;
+}
+
+@keyframes statePolishIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- VERIFYING ---------- */
+
+.state-screen {
+  justify-content: center;
+}
+
+.verification-orbit {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+}
+
+/* Reduce the visual size slightly so the screen feels intentional,
+   rather than dominated by the animation. */
+.orbit-one {
+  width: 112px;
+  height: 112px;
+}
+
+.orbit-two {
+  width: 148px;
+  height: 148px;
+}
+
+.orbit-three {
+  width: 184px;
+  height: 184px;
+}
+
+.verification-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 33, 182, 0.62),
+      rgba(139, 92, 246, 0.17)
+    );
+  box-shadow:
+    0 0 28px rgba(139, 92, 246, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.verification-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.65));
+}
+
+.state-screen h1 {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  font-size: 23px;
+  line-height: 1.1;
+  letter-spacing: -0.35px;
+  color: #f7f8ff;
+}
+
+.state-screen > p {
+  position: relative;
+  z-index: 3;
+  max-width: 230px;
+  margin: 8px auto 0;
+  font-size: 10px;
+  line-height: 1.55;
+  color: rgba(226, 237, 249, 0.65);
+}
+
+.state-screen .large-progress {
+  position: relative;
+  z-index: 3;
+  width: min(220px, 72%);
+  height: 5px;
+  margin: 24px auto 0;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.25);
+}
+
+.state-screen .large-progress div {
+  width: 55%;
+  background: linear-gradient(90deg, #5b21b6, #8b5cf6, #00b8e6);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.55);
+}
+
+.state-screen > .security-notice {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 330px);
+  margin: 28px auto 0;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border-color: rgba(139, 92, 246, 0.22);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 33, 182, 0.09),
+      rgba(5, 17, 33, 0.76)
+    );
+}
+
+/* ---------- CHECKING ---------- */
+
+.checking-screen {
+  justify-content: center;
+}
+
+.checking-visual {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+}
+
+.checking-ring:nth-child(1) {
+  width: 104px;
+  height: 104px;
+}
+
+.checking-ring:nth-child(2) {
+  width: 140px;
+  height: 140px;
+}
+
+.checking-ring:nth-child(3) {
+  width: 176px;
+  height: 176px;
+}
+
+.checking-glass {
+  width: 58px;
+  height: 58px;
+  border-width: 3px;
+  box-shadow:
+    0 0 20px rgba(0, 184, 230, 0.42),
+    inset 0 0 12px rgba(0, 184, 230, 0.05);
+}
+
+.checking-glass::after {
+  width: 29px;
+  height: 3px;
+  right: -21px;
+  bottom: -11px;
+}
+
+.checking-screen h1 {
+  margin-top: 18px;
+  font-size: 21px;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+}
+
+.checking-screen > p {
+  margin-top: 7px;
+  font-size: 10px;
+  color: rgba(225, 237, 249, 0.64);
+}
+
+.checking-dots {
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.checking-dots span {
+  width: 5px;
+  height: 5px;
+}
+
+.checking-message {
+  margin-top: 14px;
+  padding: 7px 11px;
+  border: 1px solid rgba(0, 184, 230, 0.14);
+  border-radius: 20px;
+  background: rgba(0, 184, 230, 0.035);
+  color: rgba(226, 237, 249, 0.58);
+  font-size: 8.5px;
+}
+
+.checking-message::before,
+.checking-message::after {
+  display: none;
+}
+
+/* ---------- Subtle background treatment ---------- */
+
+.state-screen::before,
+.checking-screen::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translate(-50%, -52%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.state-screen::before {
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.075),
+    transparent 68%
+  );
+}
+
+.checking-screen::before {
+  background: radial-gradient(
+    circle,
+    rgba(0, 184, 230, 0.065),
+    transparent 68%
+  );
+}
+
+/* Keep animation layers above the background glow. */
+.verification-orbit,
+.checking-visual,
+.state-screen h1,
+.state-screen > p,
+.state-screen .large-progress,
+.state-screen > .security-notice,
+.checking-screen h1,
+.checking-screen > p,
+.checking-dots,
+.checking-message {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 370px) {
+  .state-screen,
+  .checking-screen {
+    min-height: 660px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .verification-orbit,
+  .checking-visual {
+    width: 170px;
+    height: 170px;
+  }
+
+  .orbit-one {
+    width: 100px;
+    height: 100px;
+  }
+
+  .orbit-two {
+    width: 132px;
+    height: 132px;
+  }
+
+  .orbit-three {
+    width: 164px;
+    height: 164px;
+  }
+
+  .checking-ring:nth-child(1) {
+    width: 94px;
+    height: 94px;
+  }
+
+  .checking-ring:nth-child(2) {
+    width: 126px;
+    height: 126px;
+  }
+
+  .checking-ring:nth-child(3) {
+    width: 158px;
+    height: 158px;
+  }
+
+  .state-screen h1 {
+    font-size: 21px;
+  }
+
+  .checking-screen h1 {
+    font-size: 19px;
+  }
+}
+
+/* Accessibility: don't force motion for users who disable it. */
+@media (prefers-reduced-motion: reduce) {
+  .state-screen,
+  .checking-screen,
+  .orbit,
+  .checking-ring,
+  .verification-icon,
+  .checking-glass,
+  .checking-dots span {
+    animation: none !important;
   }
 }
